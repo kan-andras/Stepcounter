@@ -1,0 +1,15 @@
+header{
+    text-align: center;
+    padding: 20px;
+    background-color: var(--bs-secondary);
+}
+footer{
+    text-align: center;
+    padding: 10px;
+    font-size: 70%;
+    letter-spacing: 3px;
+    border-top: 1px solid var(--bs-secondary);
+}
+main{
+    padding: 20px;
+}
