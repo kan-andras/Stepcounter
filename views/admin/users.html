@@ -1,0 +1,209 @@
+<div class="container mt-5">
+        <h2 class="mb-4">Felhasználók Kezelése</h2>
+
+        <!-- Keresés és szűrés -->
+        <div class="row mb-4">
+            <div class="col-md-8">
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-search"></i></span>
+                    <input type="text" class="form-control" placeholder="Felhasználó keresése...">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <select class="form-select">
+                    <option selected>Összes státusz</option>
+                    <option>Aktív</option>
+                    <option>Inaktív</option>
+                    <option>Tiltott</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Felhasználók táblázata -->
+        <table class="table table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th><input class="form-check-input" type="checkbox" id="selectAll"></th>
+                    <th>Felhasználó</th>
+                    <th>Email</th>
+                    <th>Csatlakozás</th>
+                    <th>Lépések</th>
+                    <th>Státusz</th>
+                    <th>Műveletek</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input class="form-check-input" type="checkbox"></td>
+                    <td>János Péter</td>
+                    <td>janos.peter@email.com</td>
+                    <td>2025-01-15</td>
+                    <td>95,432</td>
+                    <td><span class="badge bg-success">Aktív</span></td>
+                    <td>
+                        <button class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#editUserModal">
+                            <i class="bi bi-pencil"></i>
+                        </button>
+                        <button class="btn btn-sm btn-danger">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input class="form-check-input" type="checkbox"></td>
+                    <td>Szabó Márta</td>
+                    <td>szabo.marta@email.com</td>
+                    <td>2025-01-14</td>
+                    <td>87,654</td>
+                    <td><span class="badge bg-success">Aktív</span></td>
+                    <td>
+                        <button class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#editUserModal">
+                            <i class="bi bi-pencil"></i>
+                        </button>
+                        <button class="btn btn-sm btn-danger">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input class="form-check-input" type="checkbox"></td>
+                    <td>Kiss Ádám</td>
+                    <td>kiss.adam@email.com</td>
+                    <td>2025-01-10</td>
+                    <td>0</td>
+                    <td><span class="badge bg-warning">Inaktív</span></td>
+                    <td>
+                        <button class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#editUserModal">
+                            <i class="bi bi-pencil"></i>
+                        </button>
+                        <button class="btn btn-sm btn-danger">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input class="form-check-input" type="checkbox"></td>
+                    <td>Nagy Katalin</td>
+                    <td>nagy.katalin@email.com</td>
+                    <td>2024-12-20</td>
+                    <td>0</td>
+                    <td><span class="badge bg-danger">Tiltott</span></td>
+                    <td>
+                        <button class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#editUserModal">
+                            <i class="bi bi-pencil"></i>
+                        </button>
+                        <button class="btn btn-sm btn-danger">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input class="form-check-input" type="checkbox"></td>
+                    <td>Varga István</td>
+                    <td>varga.istvan@email.com</td>
+                    <td>2025-01-12</td>
+                    <td>54,876</td>
+                    <td><span class="badge bg-success">Aktív</span></td>
+                    <td>
+                        <button class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#editUserModal">
+                            <i class="bi bi-pencil"></i>
+                        </button>
+                        <button class="btn btn-sm btn-danger">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Pagination -->
+        <nav>
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled"><a class="page-link" href="#">Előző</a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Következő</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Modal: Új felhasználó -->
+    <div class="modal fade" id="addUserModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-dark">
+                    <h5 class="modal-title">Új felhasználó</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Teljes név</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Jelszó</label>
+                            <input type="password" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Státusz</label>
+                            <select class="form-select">
+                                <option selected>Aktív</option>
+                                <option>Inaktív</option>
+                                <option>Tiltott</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer bg-dark">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Mégse</button>
+                    <button type="button" class="btn btn-primary">Hozzáadás</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Felhasználó szerkesztése -->
+    <div class="modal fade" id="editUserModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-dark">
+                    <h5 class="modal-title">Felhasználó szerkesztése</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Teljes név</label>
+                            <input type="text" class="form-control" value="János Péter">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" value="janos.peter@email.com">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Jelszó (üres = nem módosul)</label>
+                            <input type="password" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Státusz</label>
+                            <select class="form-select">
+                                <option selected>Aktív</option>
+                                <option>Inaktív</option>
+                                <option>Tiltott</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer bg-dark">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Mégse</button>
+                    <button type="button" class="btn btn-primary">Mentés</button>
+                </div>
+            </div>
+        </div>
+    </div>

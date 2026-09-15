@@ -1,0 +1,195 @@
+<div class="container mt-5">
+        <h2 class="mb-4">Admin Dashboard</h2>
+
+        <!-- Statisztika Cardok -->
+        <div class="row mb-5">
+            <div class="col-md-3">
+                <div class="card bg-primary text-white">
+                    <div class="card-body">
+                        <h5>245</h5>
+                        <p class="mb-0">Összes felhasználó</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-success text-white">
+                    <div class="card-body">
+                        <h5>1.2M</h5>
+                        <p class="mb-0">Mai lépések</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-warning">
+                    <div class="card-body">
+                        <h5>182</h5>
+                        <p class="mb-0">Aktív ma</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-danger text-white">
+                    <div class="card-body">
+                        <h5>63</h5>
+                        <p class="mb-0">Inaktív</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Heti Aktivitás (Progress Bars) -->
+        <div class="card mb-5">
+            <div class="card-header bg-dark">
+                <h5 class="mb-0">Heti Aktivitás</h5>
+            </div>
+            <div class="card-body">
+                <div class="row text-center">
+                    <div class="col">
+                        <small class="d-block mb-2">Hétfő</small>
+                        <div class="progress" style="height: 100px;">
+                            <div class="progress-bar bg-success" style="width: 75%; height: 100%;"></div>
+                        </div>
+                        <small>285K</small>
+                    </div>
+                    <div class="col">
+                        <small class="d-block mb-2">Kedd</small>
+                        <div class="progress" style="height: 100px;">
+                            <div class="progress-bar bg-success" style="width: 85%; height: 100%;"></div>
+                        </div>
+                        <small>325K</small>
+                    </div>
+                    <div class="col">
+                        <small class="d-block mb-2">Szerda</small>
+                        <div class="progress" style="height: 100px;">
+                            <div class="progress-bar bg-success" style="width: 65%; height: 100%;"></div>
+                        </div>
+                        <small>248K</small>
+                    </div>
+                    <div class="col">
+                        <small class="d-block mb-2">Csütörtök</small>
+                        <div class="progress" style="height: 100px;">
+                            <div class="progress-bar bg-success" style="width: 90%; height: 100%;"></div>
+                        </div>
+                        <small>345K</small>
+                    </div>
+                    <div class="col">
+                        <small class="d-block mb-2">Péntek</small>
+                        <div class="progress" style="height: 100px;">
+                            <div class="progress-bar bg-success" style="width: 80%; height: 100%;"></div>
+                        </div>
+                        <small>305K</small>
+                    </div>
+                    <div class="col">
+                        <small class="d-block mb-2">Szombat</small>
+                        <div class="progress" style="height: 100px;">
+                            <div class="progress-bar bg-warning" style="width: 45%; height: 100%;"></div>
+                        </div>
+                        <small>172K</small>
+                    </div>
+                    <div class="col">
+                        <small class="d-block mb-2">Vasárnap</small>
+                        <div class="progress" style="height: 100px;">
+                            <div class="progress-bar bg-warning" style="width: 50%; height: 100%;"></div>
+                        </div>
+                        <small>192K</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Top Felhasználók (List Group) -->
+        <div class="card mb-5">
+            <div class="card-header bg-dark">
+                <h5 class="mb-0">Top 5 Felhasználó</h5>
+            </div>
+            <div class="list-group list-group-flush">
+                <a href="#" class="list-group-item list-group-item-action">
+                    <strong>1. János Péter</strong> - 95,432 lépés
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    <strong>2. Szabó Márta</strong> - 87,654 lépés
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    <strong>3. Kiss Ádám</strong> - 76,543 lépés
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    <strong>4. Nagy Katalin</strong> - 65,321 lépés
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    <strong>5. Varga István</strong> - 54,876 lépés
+                </a>
+            </div>
+        </div>
+
+        <!-- Figyelmeztetések (Alerts) -->
+        <div class="mb-5">
+            <h5 class="mb-3">Figyelmeztetések</h5>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Alacsony aktivitás!</strong> 15 felhasználónak nincs lépése az elmúlt 7 napban.
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+            <div class="alert alert-info alert-dismissible fade show" role="alert">
+                <strong>Új regisztrációk:</strong> 12 új felhasználó regisztrált az elmúlt 3 napban.
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Meghibásodás!</strong> 3 eszköz jelzett szinkronizálási hibát.
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        </div>
+
+        <!-- Legutóbbi Aktivitás (Table) -->
+        <div class="card">
+            <div class="card-header bg-dark">
+                <h5 class="mb-0">Legutóbbi Aktivitás</h5>
+            </div>
+            <table class="table table-hover mb-0">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Felhasználó</th>
+                        <th>Lépések</th>
+                        <th>Időpont</th>
+                        <th>Eszköz</th>
+                        <th>Státusz</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>János Péter</td>
+                        <td>8,432</td>
+                        <td>Ma 14:30</td>
+                        <td>iOS</td>
+                        <td><span class="badge bg-success">Aktív</span></td>
+                    </tr>
+                    <tr>
+                        <td>Szabó Márta</td>
+                        <td>6,754</td>
+                        <td>Ma 12:15</td>
+                        <td>Android</td>
+                        <td><span class="badge bg-success">Aktív</span></td>
+                    </tr>
+                    <tr>
+                        <td>Kiss Ádám</td>
+                        <td>5,321</td>
+                        <td>Tegnap 18:45</td>
+                        <td>iOS</td>
+                        <td><span class="badge bg-warning">Inaktív</span></td>
+                    </tr>
+                    <tr>
+                        <td>Nagy Katalin</td>
+                        <td>0</td>
+                        <td>3 napja</td>
+                        <td>Web</td>
+                        <td><span class="badge bg-danger">Offline</span></td>
+                    </tr>
+                    <tr>
+                        <td>Varga István</td>
+                        <td>3,876</td>
+                        <td>Ma 10:20</td>
+                        <td>Android</td>
+                        <td><span class="badge bg-success">Aktív</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
