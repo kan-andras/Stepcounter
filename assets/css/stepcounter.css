@@ -8,14 +8,35 @@ footer{
     padding: 10px;
     font-size: 70%;
     letter-spacing: 3px;
-    border-top: 1px solid var(--bs-secondary);
+    border-top: 2px dotted var(--bs-secondary);
 }
 main{
     padding: 20px;
 }
 strong{
-    font-size: 150%;
+    font-weight: 150%;
 }
 h1{
-    color:aqua;
+    color: var(--bs-primary);
+}
+h2{
+    color: var(--bs-secondary);
+}
+p{
+    text-align: justify;
+    line-height: 200%;
+}
+.logo{
+    font-size: 400%;
+}
+.iconSettings{
+    width:44px; height:44px; background:#ced8ff; color:#6c63ff; font-size:1.2rem;
+}
+.themeSwitch{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+.hide{
+    display: none;
 }
