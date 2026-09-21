@@ -7,6 +7,13 @@ let theme = 'light';
 
 async function navigate(page){
     contentbox.innerHTML = await (await fetch(`views/${page}.html`)).text();
+
+    switch (page){
+        case 'admin/users':{
+            getAllUsers();
+            break;
+        }
+    }
 }
 
 lightModeBtn.addEventListener('click', () =>{
