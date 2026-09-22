@@ -1,8 +1,21 @@
 async function getAllUsers(){
-    const response = await fetch('http://localhost:3000/admin/users')
-    const users = await response.json();
-    console.log(users);
-    drawtable(users);
+    const response = await fetch('http://localhost:3000/admin/users', {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ luid: 4})
+    });
+    if (response.status != 200){
+        const res = await response.json();
+        showMessage('danger', 'ERROR', res.error)
+    }
+    else{
+        const users = await response.json();
+        // console.log(users);
+        drawtable(users);
+    }
+    
 }
 
 function drawtable(users){
