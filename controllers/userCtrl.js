@@ -1,12 +1,32 @@
 async function registration(){
-    let name = document.querySelector('#name');
-    let email = document.querySelector('#email');
-    let password = document.querySelector('#password');
-    let confirm = document.querySelector('#confirm');
+    
+    let name = document.querySelector('#name').value
+    let email = document.querySelector('#email').value
+    let password = document.querySelector('#password').value
+    let confirm = document.querySelector('#confirm').value
+    //meg kell szólítani a szervert
 
-    const  response = await fetch('http://localhost:3000/admin/users');
-    console.log(response);
+    let user = {
+        name,
+        email,
+        password,
+        confirm
+    }
+    const response = await fetch(`http://localhost:3000/users/register`, {
+        method:'POST',
+        headers:{
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(user)
+    })
 
-    const data = await response.json();
-    console.log(data);
+    let res = await response.json()
+    if(response.status !=201){
+        showMessage('danger', 'ERROR', res.error );
+    } else{
+        showMessage('success', 'OK', res.message)
+        navigate('users/login')
+    }
+
+
 }

@@ -4,7 +4,7 @@ async function getAllUsers(){
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({ luid: 4})
+        body: JSON.stringify({ luid: 3})
     });
     if (response.status != 200){
         const res = await response.json();

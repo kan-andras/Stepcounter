@@ -5,6 +5,12 @@ let darkModeBtn = document.querySelector('#darkModeBtn');
 
 let theme = 'light';
 
+
+function getLoggedUser() {
+    const raw = localStorage.getItem('SCU');
+    return raw ? JSON.parse(raw) : null;
+}
+
 async function navigate(page){
     contentbox.innerHTML = await (await fetch(`views/${page}.html`)).text();
 
@@ -13,6 +19,11 @@ async function navigate(page){
             getAllUsers();
             break;
         }
+        case 'users/steps':
+            getAllSteps();
+            break;
+        default:
+            break;
     }
 }
 
