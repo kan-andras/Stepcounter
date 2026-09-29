@@ -1,10 +1,15 @@
 async function getAllUsers(){
+    //
+    let luid = loadUser() ? loadUser().id : 0;
+    //
     const response = await fetch('http://localhost:3000/admin/users', {
         method: 'POST',
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({ luid: 3})
+        //
+        body: JSON.stringify({ luid })
+        //
     });
     if (response.status != 200){
         const res = await response.json();
@@ -15,9 +20,9 @@ async function getAllUsers(){
         // console.log(users);
         drawtable(users);
     }
-    
+   
 }
-
+ 
 function drawtable(users){
     let usersCount = document.querySelector('#usersCount');
     usersCount.innerHTML = users.length;
@@ -57,4 +62,53 @@ function addTableRow(user, index){
         td7.classList.add('text-end');
  
         usersList.appendChild(tr);
+}
+
+async function getStatistics() {
+    let luid = loadUser() ? loadUser().id : 0;
+    //
+    const response = await fetch('http://localhost:3000/admin/statistics', {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        //
+        body: JSON.stringify({ luid })
+        //
+    });
+    if (response.status != 200){
+        const res = await response.json();
+        showMessage('danger', 'ERROR', res.error)
+    }
+    else{
+        const data = await response.json();
+        // console.log(users);
+        drawDashboard(data);
+    }
+}
+
+function drawDashboard(results){
+    let totalstep = document.querySelector('#totalStep');
+    let totalKm = document.querySelector('#totalKm');
+    let avgStep = document.querySelector('#avgstep');
+    let avgkm = document.querySelector('#avgKm');
+
+    totalstep.innerHTML = results[0][0].total + ' steps';
+    totalKm.innerHTML = '-' + Math.round((results[0][0].total * 0.7) / 1000) + ' km';
+    avgStep.innerHTML = results[0][0].avg + ' steps'
+    avgkm.innerHTML = '-' + Math.round((results[0][0].avg * 0.7) / 1000) + ' km';
+
+    let topUsers = document.querySelector('#topUsers');
+
+    results[0][1].forEach((user, index) =>{
+        let km = Math.round((user.steps * 0.7) / 1000) + ' km';
+        topUsers.innerHTML += `
+        <tr>
+        <td>${index+1}.</td>
+        <td class="text-start">
+        ${user.name} <br> <small>${user.email}</small>
+        </td>
+        <td class="text-end>${user.steps} <br> <small>${km}</small></td>
+        </tr>`
+    })
 }

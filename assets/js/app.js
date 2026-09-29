@@ -19,6 +19,14 @@ async function navigate(page){
             getAllUsers();
             break;
         }
+        case 'users/profile':{
+            getUserData();
+            break;
+        }
+        case 'admin/dashboard':{
+            getStatistics();
+            break;
+        }
         case 'users/steps':
             getAllSteps();
             break;
@@ -62,3 +70,4 @@ function setThemeBtnState(){
 
 navigate('users/home');
 loadTheme();
+loginCheck();

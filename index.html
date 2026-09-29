@@ -26,8 +26,8 @@
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-              <ul class="navbar-nav">
-                <!--Base menu-->
+              <!--Base menu-->
+              <ul class="navbar-nav" id="baseMenu">
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="#" onclick="navigate('users/home')">Home</a>
                 </li>
@@ -37,29 +37,32 @@
                 <li class="nav-item">
                   <a class="nav-link" href="#" onclick="navigate('users/register')">Registration</a>
                 </li>
+              </ul>
 
                 <!--user-->
-                <li class="nav-item">
-                  <a class="nav-link" href="#" onclick="navigate('users/steps')">My steps</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#" onclick="navigate('users/profile')">My profile</a>
-                </li>
-
+                <ul class="navbar-nav" id="userMenu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="navigate('users/steps')">My steps</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="navigate('users/profile')">My profile</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="logout()">Logout</a>
+                  </li>
+                </ul>
                 <!--Admin-->
-                <li class="nav-item">
-                  <a class="nav-link" href="#" onclick="navigate('admin/dashboard')">Dashboard</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#" onclick="navigate('admin/users')">Manage users</a>
-                </li>
-
-                <!--User, Admin-->
-                <li class="nav-item">
-                  <a class="nav-link" href="#" onclick="navigate('users/logout')">Logout</a>
-                </li>
-              </ul>
-              <!-- Admin -->
+                <ul class="navbar-nav" id="adminMenu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="navigate('admin/dashboard')">Dashboard</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="navigate('admin/users')">Manage users</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="logout()">Logout</a>
+                  </li>
+                </ul>
             </div>
           </div>
         </nav>
@@ -72,17 +75,17 @@
             <p>Bajai SZC Türr István Technikum - 13.A szoftverfejlesztő</p>
         </footer>
     </div>
-
-    
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/moment.js"></script>
-    <script src="assets/js/app.js"></script>
-
     <!--controllers scripts-->
     <script src="controllers/message.js"></script>
     <script src="controllers/stepCtrl.js"></script>
     <script src="controllers/userCtrl.js"></script>
     <script src="controllers/adminCtrl.js"></script>
+    
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/moment.js"></script>
+    <script src="assets/js/app.js"></script>
+
+    
     
 </body>
 </html>
