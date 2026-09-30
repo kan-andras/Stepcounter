@@ -82,14 +82,19 @@ function loginCheck() {
         if (user.role == 'admin'){
             //alert("belépve")
             setMenuItems('admin');
-            navigate('users/Dashboard');
+            navigate('admin/dashboard');
+        }
+        else if (user.role == 'user')
+        {
+            setMenuItems('user')
+            //alert("user belépve")
+            navigate('users/steps');
         }
         else
         {
-            //alert("user belépve")
-            setMenuItems('user/steps');
+            setMenuItems('')
+            navigate('home')
         }
-        
     }
     else{
         //alert("nincs belépve")

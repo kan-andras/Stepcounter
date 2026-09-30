@@ -27,9 +27,10 @@ async function navigate(page){
             getStatistics();
             break;
         }
-        case 'users/steps':
-            getAllSteps();
+        case 'users/steps':{
+            getallSteps();
             break;
+        }
         default:
             break;
     }

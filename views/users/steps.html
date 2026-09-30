@@ -1,2 +1,47 @@
 <h1>Manage my steps</h1>
 <hr>
+
+<div class="row">
+<div class="col-6 col-sm-6">
+<h6>Új lépés felvétele:</h6>
+
+<div class="form-floating mb-3">
+  <input type="number" class="form-control" id="step_ct" placeholder="">
+  <label for="step_ct">Lépés szám</label>
+</div>
+
+</div>
+<div class="col-6 col-sm-6">
+    <h6><i class="bi bi-calendar-check-fill"></i>&nbsp;&nbsp;Dátum megadása:</h6>
+
+    <div class="form-floating mb-3">
+      <input type="date" class="form-control" id="nw_date" placeholder="Date">
+      <label for="nw_date">Dátum:</label>
+    </div>
+</div>
+<div class="col-md-9">
+    <button type="button" class="btn btn-primary mb-3" onclick="newStep()"><i class="bi bi-person-walking"></i>&nbsp;&nbsp;Új lépés felvétele</button>
+</div>
+
+</div>
+
+
+
+<table class="table table-hover table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Lépés szám</th>
+            <th>Létrehozás dátuma</th>
+            <th>Utoljára update-elt</th>
+            <th>Dátum</th>
+            <th class="text-end">Szerkesztés/törlés</th>
+        </tr>
+    </thead>
+    <tbody id="stepsList"></tbody>
+    <tfoot>
+        <tr>
+            <td colspan="6" class="text-center">Summary: <strong id="stepCount">0</strong> step(s)</td>
+        </tr>
+    </tfoot>
+</table>
