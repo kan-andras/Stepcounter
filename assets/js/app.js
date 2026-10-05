@@ -29,6 +29,7 @@ async function navigate(page){
         }
         case 'users/steps':{
             getallSteps();
+            // initChart();
             break;
         }
         default:

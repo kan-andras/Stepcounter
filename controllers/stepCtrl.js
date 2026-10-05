@@ -19,6 +19,7 @@ async function getallSteps(){
         const steps = await response.json();
         // console.log(users);
         drawStepsTable(steps);
+        initChart(steps);
     }
    
 }
@@ -118,4 +119,39 @@ async function newStep() {
         getallSteps();
     }
 
+}
+
+function initChart(steps){
+    getallSteps();
+    const ctx = document.getElementById('myChart');
+    let labels = [];
+    let datas = [];
+
+    steps.sort((a,b) => new Date(a.date) - new Date(b.date));
+
+    steps.forEach((results) => {
+        labels.push(moment(results.date).format('YYYY-MM-DD'));
+        datas.push(results.step_count);
+    })
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Steps',
+          data: datas,
+          borderWidth: 2,
+          pointStyle: 'circle',
+          pointRadius: 10,
+          pointHoverRadius: 15
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
 }
