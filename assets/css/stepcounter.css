@@ -40,3 +40,7 @@ p{
 .hide{
     display: none;
 }
+#calendar{
+    max-width: 1100px;
+    margin: 0 auto;
+}

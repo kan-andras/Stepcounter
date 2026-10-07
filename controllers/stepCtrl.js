@@ -20,6 +20,7 @@ async function getallSteps(){
         // console.log(users);
         drawStepsTable(steps);
         initChart(steps);
+        initCalendar(steps);
     }
    
 }
@@ -122,7 +123,6 @@ async function newStep() {
 }
 
 function initChart(steps){
-    getallSteps();
     const ctx = document.getElementById('myChart');
     let labels = [];
     let datas = [];
@@ -155,3 +155,36 @@ function initChart(steps){
       }
     });
 }
+
+function initCalendar(steps){
+    var calendarEl = document.getElementById('calendar');
+    loadTheme();
+    colorScheme = localStorage.getItem('SCT') || 'light';
+    let myEvents = steps.map((steps) =>{
+        return{
+            title: steps.step_count + 'steps',
+            start: steps.date,
+        }
+    })
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      colorScheme: colorScheme,
+      initialDate: new Date(),
+      initialView: 'dayGridMonth',
+      nowIndicator: true,
+      headerToolbar: {
+        left: 'prevYear,prev,today,next,nextYear',
+        center: 'title',
+        right: 'multiMonthYear,dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+      },
+      navLinks: true, // can click day/week names to navigate views
+      editable: false,
+      selectable: false,
+      selectMirror: true,
+      dayMaxEvents: true, // allow "more" link when too many events
+      events: myEvents,
+    });
+
+    calendar.render();
+
+};
